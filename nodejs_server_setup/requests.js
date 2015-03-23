@@ -10,14 +10,9 @@ var connection = mysql.createConnection(
                                         );
 
 connection.connect();
-exports.insert_in_db = function(data) {
-  //  var data = {
-  //      name    : name,
-  //      mobno :  mobno,
-  //      reg_id   : reg_id
-  //  };
+exports.insert_in_db = function(data,callback) {
 
-       var query = connection.query("INSERT INTO NODE_TABLE set ? ",data, function(err, rows)
+       var query = connection.query("INSERT INTO node_data set ? ",data, function(err, rows)
                                     {
                                     callback({'response':"Sucessfully added"});
                                     });

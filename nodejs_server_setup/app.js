@@ -9,7 +9,7 @@ app.use(connect.json());
 app.use(connect.urlencoded());
 
 // Routes
-var routedata = require('./routes/routes.js')
+var routedata = require('./routes.js')
 routedata(app);
 app.listen(port);
 console.log('The App runs on port ' + port);
