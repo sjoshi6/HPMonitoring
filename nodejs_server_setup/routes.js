@@ -9,6 +9,14 @@ app.post('/nodedata',function(req,res){
                               console.log('Responseadded');
                               res.json('');
                               });
-               });
+});
+
+app.post('/appsdata',function(req,res){
+
+                requests.insert_app_data_in_db(req.body.apps,function(value){
+                            console.log('App Data Added');
+                            res.json('');
+                            });
+});
 
 }
