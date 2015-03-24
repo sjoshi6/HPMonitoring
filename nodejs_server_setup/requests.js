@@ -25,6 +25,8 @@ exports.insert_app_data_in_db = function(data,callback) {
       apps.forEach(function(data){
           console.log(data);
       });
+	
+	callback({'response':'Added Apps'})
       //var query = connection.query("INSERT INTO node_data set ? ",data, function(err, rows)
       //                              {
       //                              callback({'response':"Sucessfully added"});
