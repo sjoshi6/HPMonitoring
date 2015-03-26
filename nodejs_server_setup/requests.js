@@ -32,7 +32,8 @@ exports.insert_app_data_in_db = function(data,callback) {
                                                  callback({'response':"Sucessfully added"});
                                                });
 
-                                }else
+                                }
+                                else
                                 {
                         //          var query = connection.query("UPDATE application_data set ? ",data, function(err, rows)
                         //                     {
@@ -42,4 +43,4 @@ exports.insert_app_data_in_db = function(data,callback) {
 
                                 });
                               });
-      });
+      }
