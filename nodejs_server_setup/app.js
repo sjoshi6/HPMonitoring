@@ -12,7 +12,7 @@ app.use(connect.urlencoded());
 var routedata = require('./routes.js')
 routedata(app);
 
-app.listen(port, function () {
+var server=app.listen(port, function () {
 
 	  var host = server.address().address
 	  var port = server.address().port
