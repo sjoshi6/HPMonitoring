@@ -41,5 +41,5 @@ exports.insert_app_data_in_db = function(data,callback) {
                                 }
 
                                 });
-                                }
+                              });
       });
