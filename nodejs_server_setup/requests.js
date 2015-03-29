@@ -39,9 +39,9 @@ exports.insert_app_data_in_db = function(data,callback) {
                                 else
                                 {
                                   var query = connection.query("UPDATE application_data set ? WHERE id = ?",[data,id], function(err, rows)
-                        //                     {
+                                             {
                                           callback({'response':"Sucessfully added"});
-                        //                     });
+                                             });
                                 }
 
                                 });
@@ -68,9 +68,9 @@ exports.insert_iostat_data_in_db = function(data,callback) {
         else
         {
           var query = connection.query("UPDATE iostat_cpu_data set ? WHERE id= ?",[cpu,id], function(err, rows)
-//                     {
+                     {
                   callback({'response':"Sucessfully added"});
-//                     });
+                     });
         }
 
           });
@@ -90,9 +90,9 @@ exports.insert_iostat_data_in_db = function(data,callback) {
           {
 
           var query = connection.query("UPDATE iostat_disk_data set ? WHERE id= ?",[disk,id], function(err, rows)
-  //                     {
+                       {
                     callback({'response':"Sucessfully added"});
-  //                     });
+                       });
           }
 
             });
