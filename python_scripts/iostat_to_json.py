@@ -4,11 +4,11 @@ import sys
 def json_parser(filename):
     with open(filename,'r') as f:
         linecount=0
-        dict={}
-	cpu_dict={}
-	disk_dict={}
-        cpu = ["%user", "%nice", "%system", "%iowait", "%steal", "%idle"]
-        disk = ["device","rrqm/s","wrqm/s", "r/s", "w/s", "rkB/s", "wkB/s", "avgrq-sz", "avgqu-sz", "await", "r_await", "w_await", "svctm", "%util"]
+        dict={'id':sys.argv[2]}
+	cpu_dict={'id':sys.argv[2]}
+	disk_dict={'id':sys.argv[2]}
+        cpu = ["user", "nice", "system", "iowait", "steal", "idle"]
+        disk = ["device","rrqm_s","wrqm_s", "r_s", "w_s", "rkB_s", "wkB_s", "avgrq-sz", "avgqu-sz", "await", "r_await", "w_await", "svctm", "util"]
         for line in f:
 
 		if linecount==3:

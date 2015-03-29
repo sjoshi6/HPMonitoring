@@ -19,4 +19,12 @@ app.post('/appsdata',function(req,res){
                             });
 });
 
+app.post('/iostatdata',function(req,res){
+
+                requests.insert_iostat_data_in_db(req.body,function(value){
+                          console.log('Iostat data added');
+                          res.json('');
+                          });
+});
+
 }
