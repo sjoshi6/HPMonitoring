@@ -8,7 +8,7 @@ def json_parser(filename):
 	cpu_dict={'id':sys.argv[2]}
 	disk_dict={'id':sys.argv[2]}
         cpu = ["user", "nice", "system", "iowait", "steal", "idle"]
-        disk = ["device","rrqm_s","wrqm_s", "r_s", "w_s", "rkB_s", "wkB_s", "avgrq-sz", "avgqu-sz", "await", "r_await", "w_await", "svctm", "util"]
+        disk = ["device","rrqm_s","wrqm_s", "r_s", "w_s", "rkB_s", "wkB_s", "avgrq_sz", "avgqu_sz", "await", "r_await", "w_await", "svctm", "util"]
         for line in f:
 
 		if linecount==3:
