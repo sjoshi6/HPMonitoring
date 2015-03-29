@@ -15,10 +15,30 @@ connection.connect();
 
 exports.insert_in_db = function(data,callback) {
 
-       var query = connection.query("INSERT INTO node_data set ? ",data, function(err, rows)
-                                    {
+
+      var id = data.id;
+      var query = connection.query("SELECT * from node_data where id='"+id+"';", function(err, rows){
+
+                          if(rows.length == 0)
+                          {
+                                var query = connection.query("INSERT INTO node_data set ? ",data, function(err, rows)
+                                       {
+                                       callback({'response':"Sucessfully added"});
+                                       });
+
+                          }
+                          else
+                          {
+                                var query = connection.query("UPDATE node_data set ? WHERE id = ?",[data,id], function(err, rows)
+                                       {
                                     callback({'response':"Sucessfully added"});
-                                    });
+                                       });
+                          }
+                        });
+
+
+
+
 }
 
 exports.insert_app_data_in_db = function(data,callback) {
