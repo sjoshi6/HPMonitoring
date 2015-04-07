@@ -1,5 +1,5 @@
 
-#Usage apps_data_hearbeatsender
+#Usage apps_data_hearbeatsender.sh
 
 while [ true ]
 do

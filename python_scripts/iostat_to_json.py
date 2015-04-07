@@ -11,12 +11,12 @@ def json_parser(filename):
         disk = ["device","rrqm_s","wrqm_s", "r_s", "w_s", "rkB_s", "wkB_s", "avgrq_sz", "avgqu_sz", "await", "r_await", "w_await", "svctm", "util"]
         for line in f:
 
-		if linecount==3:
+		if linecount==11:
 			i=0
 	    		for word in line.rstrip().lstrip().split():
 				cpu_dict[cpu[i]]=word
 				i=i+1
-		if linecount==6:
+		if linecount==14:
 			j=0
 			for word in line.rstrip().lstrip().split():
                                 disk_dict[disk[j]]=word
