@@ -27,4 +27,23 @@ app.post('/iostatdata',function(req,res){
                           });
 });
 
+
+app.post('/clustermetricsdata',function(req,res){
+
+                requests.insert_cluster_met_data_in_db(req.body,function(value){
+                          console.log('Cluster Metrics data added');
+                          res.json('');
+                          });
+});
+
+
+app.post('/clusterinfodata',function(req,res){
+
+                requests.insert_cluster_info_data_in_db(req.body,function(value){
+                          console.log('Cluster Info data added');
+                          res.json('');
+                          });
+});
+
+
 }
