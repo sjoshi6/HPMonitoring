@@ -2,7 +2,7 @@ var request = require('request');
 var mysql = require('mysql');
 var connection = mysql.createConnection(
                                         {
-                                        host     : 'localhost',
+                                        host     : '152.46.19.52',
                                         user     : 'root',
                                         password : '',
                                         database : 'HadoopPerformanceMonitoring',
@@ -175,5 +175,5 @@ exports.insert_cluster_info_data_in_db = function(data,callback) {
 exports.insert_dfs_data_in_db = function(data,callback) {
 
               console.log(data)
-    
+
   }
