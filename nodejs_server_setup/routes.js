@@ -46,4 +46,12 @@ app.post('/clusterinfodata',function(req,res){
 });
 
 
+app.post('/dfsdata',function(req,res){
+
+                requests.insert_dfs_data_in_db(req.body,function(value){
+                          console.log('DFS data added');
+                          res.json('');
+                          });
+});
+
 }
