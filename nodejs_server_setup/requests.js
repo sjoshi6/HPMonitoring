@@ -174,35 +174,41 @@ exports.insert_cluster_info_data_in_db = function(data,callback) {
 
 exports.insert_dfs_data_in_db = function(data,callback) {
 
+    var nodes = []
+
     for (key in data)
     {
-
-      console.log(key)
-
-      var query = connection.query("SELECT * from DFS_health_data where Name='"+key+"';", function(err, rows){
+        nodes.push(data[key])
+    }
 
 
-                                if(rows.length == 0){
-                                  console.log(data[key]);
-                                  var query = connection.query("INSERT INTO DFS_health_data set ? ",data[key], function(err, rows)
-                                               {
-                                                  callback({'response':"Sucessfully added"});
-                                               });
+    console.log(nodes)
 
-                                }
-                                else
-                                {
-                                  console.log(data[key]);
-                                  var query = connection.query("UPDATE DFS_health_data set ? WHERE Name= ?",[data[key],key], function(err, rows)
-                                             {
-                                                  callback({'response':"Sucessfully updated"});
-                                             });
-                                }
-                                });
-   }
+    nodes.forEach(function(data){
 
+        var name =  data.Name
+        console.log("Data for "+ name)
+        var query = connection.query("SELECT * from DFS_health_data where Name='"+name+"';", function(err, rows){
 
+                                  if(rows.length == 0){
 
-    callback({'response':"Sucessfully updated"});
+                                      var query = connection.query("INSERT INTO DFS_health_data set ? ",data, function(err, rows)
+                                                   {
+                                                      callback({'response':"DFS Health Data Sucessfully added"});
+                                                   });
+
+                                  }
+                                  else
+                                  {
+
+                                      var query = connection.query("UPDATE DFS_health_data set ? WHERE Name= ?",[data,name], function(err, rows)
+                                                 {
+                                                      callback({'response':"DFS Health Data Sucessfully updated"});
+                                                 });
+                                  }
+                                  });
+
+    });
+
 
 }
