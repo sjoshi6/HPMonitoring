@@ -29,6 +29,8 @@ def dfs_to_json(filename):
 
     jsonarray=json.dumps(main_dict)
 
+    print(jsonarray)
+
     target = open(filename+"out.json", 'w')
     target.truncate()
     target.write(jsonarray)
