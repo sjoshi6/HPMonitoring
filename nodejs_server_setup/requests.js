@@ -174,6 +174,11 @@ exports.insert_cluster_info_data_in_db = function(data,callback) {
 
 exports.insert_dfs_data_in_db = function(data,callback) {
 
-              console.log(data)
+        data.forEach(function(small_data){
+
+              console.log('--------------------------------------------------')
+              console.log(small_data)
+
+        })
 
   }

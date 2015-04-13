@@ -21,7 +21,7 @@ def dfs_to_json(filename):
             while i <= j+14:
                 line = lines[i]
                 line_parts= line.split(":")
-                node_dict[holder[temp_reader]] = line_parts[1]
+                node_dict[holder[temp_reader]] = line_parts[1].lstrip().rstrip()
                 temp_reader = temp_reader+1
                 i=i+1
 
