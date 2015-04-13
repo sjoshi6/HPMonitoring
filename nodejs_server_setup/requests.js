@@ -168,3 +168,18 @@ exports.insert_cluster_info_data_in_db = function(data,callback) {
                                 }
                                 });
 }
+
+
+/////////////////////DFS Data///////////////////////////////////
+
+exports.insert_dfs_data_in_db = function(data,callback) {
+
+
+  data.forEach(function(data){
+
+              console.log(data)
+              
+    }
+
+
+}
