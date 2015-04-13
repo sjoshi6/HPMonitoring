@@ -177,9 +177,28 @@ exports.insert_dfs_data_in_db = function(data,callback) {
     for (key in data)
     {
 
-      console.log(key)
+    //  console.log(key)
 
-    }
+      var query = connection.query("SELECT * from DFS_health_data where Name='"+key+"';", function(err, rows){
+
+                                if(rows.length == 0){
+                                  var query = connection.query("INSERT INTO DFS_health_data set ? ",data, function(err, rows)
+                                               {
+                                                  callback({'response':"Sucessfully added"});
+                                               });
+
+                                }
+                                else
+                                {
+                                  var query = connection.query("UPDATE DFS_health_data set ? WHERE Name= ?",[data,id], function(err, rows)
+                                             {
+                                                  callback({'response':"Sucessfully updated"});
+                                             });
+                                }
+                                });
+   }
+
+
 
     callback({'response':"Sucessfully updated"});
 
