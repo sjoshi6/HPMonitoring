@@ -180,7 +180,7 @@ exports.insert_dfs_data_in_db = function(data,callback) {
       console.log(key)
 
       var query = connection.query("SELECT * from DFS_health_data where Name='"+key+"';", function(err, rows){
-
+        console.log(rows);
                                 if(rows.length == 0){
                                   var query = connection.query("INSERT INTO DFS_health_data set ? ",data[key], function(err, rows)
                                                {
