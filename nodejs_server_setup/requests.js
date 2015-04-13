@@ -177,7 +177,7 @@ exports.insert_dfs_data_in_db = function(data,callback) {
     for (key in data)
     {
 
-    //  console.log(key)
+      console.log(key)
 
       var query = connection.query("SELECT * from DFS_health_data where Name='"+key+"';", function(err, rows){
 
