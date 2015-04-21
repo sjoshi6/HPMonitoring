@@ -25,7 +25,21 @@ def dfs_to_json(filename):
                 temp_reader = temp_reader+1
                 i=i+1
 
+            configcap = node_dict["ConfigCapacity"].split(" ")
+            node_dict["Total_MB"] = configcap[0]
+
+            nondfscap = node_dict["NonDFSUsed"].split(" ")
+            node_dict["NonDFS_MB"] = nondfscap[0]
+
+            dfsunusedcap = node_dict["DFSRemaining"].split(" ")
+            node_dict["DFSRemaining_MB"] = dfsunusedcap[0]
+
+            dfs_usedcap = node_dict["DFSUsed"].split(" ")
+            node_dict["DFSUsed_MB"] = dfs_usedcap[0]
+
             main_dict[node_dict["Name"]] = node_dict
+
+
 
     jsonarray=json.dumps(main_dict)
 
